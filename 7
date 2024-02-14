@@ -1,0 +1,12 @@
+fn longest_common_prefix(strings: &[&str]) -> &str {
+    if strings.is_empty() {
+        return "";
+    }
+    let first_str = strings[0];
+    let prefix_len = first_str
+        .chars()
+        .zip(strings.iter().skip(1).flat_map(|s| s.chars()))
+        .position(|(c1, c2)| c1 != c2)
+        .unwrap_or(first_str.len());
+    &first_str[..prefix_len]
+}
