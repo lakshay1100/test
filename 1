@@ -1,0 +1,4 @@
+fn is_palindrome(s: &str) -> bool {
+    let clean_str: String = s.chars().filter(|c| c.is_alphanumeric()).collect();
+    clean_str.eq_ignore_ascii_case(&clean_str.chars().rev().collect::<String>())
+}
