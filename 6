@@ -1,0 +1,8 @@
+fn find_median(arr: &[i32]) -> f64 {
+    let mid = arr.len() / 2;
+    if arr.len() % 2 == 0 {
+        ((arr[mid - 1] + arr[mid]) as f64) / 2.0
+    } else {
+        arr[mid] as f64
+    }
+}
